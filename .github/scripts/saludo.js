@@ -1,2 +1,2 @@
 const test = process.argv[2]
-console.log(`Hola desde el script ${test}`);
+console.log(`se ejecuto la accion de triggers ${test}`);

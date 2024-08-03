@@ -1,5 +1,5 @@
 name: hola-mundo #nombre del workflow
-on: [push] #evento que lo activara
+on: [push]    
 jobs: #Definicion de los jobs
   hola-mundo: #nombre del job
     runs-on: ubuntu-latest #Maquina en la que se ejecutara
