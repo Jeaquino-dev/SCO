@@ -2,7 +2,7 @@ name: hola-mundo #nombre del workflow
 on: [push] #evento que lo activara
 jobs: #Definicion de los jobs
   hola-mundo: #nombre del job
-    runs-on: ubutu-latestv #Maquina en la que se ejecutara
+    runs-on: ubutu-latest #Maquina en la que se ejecutara
     steps: #Lista de steps del job hola-mundo
       - name: clone repository
         uses: actions/checkout@v4
