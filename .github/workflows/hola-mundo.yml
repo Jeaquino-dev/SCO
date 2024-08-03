@@ -1,4 +1,5 @@
 name: hola-mundo #nombre del workflow
+run-name: Ejercicio 1 - hola-mundo
 on: [push]    
 jobs: #Definicion de los jobs
   hola-mundo: #nombre del job

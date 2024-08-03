@@ -1,4 +1,5 @@
 name: triggers #nombre del workflow
+run-name: Ejercicio 2 - triggers
 on: 
   push: #evento que lo activara
     branches: ['actions','develop']
