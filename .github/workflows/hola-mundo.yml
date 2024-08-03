@@ -1,0 +1,16 @@
+name: hola-mundo #nombre del workflow
+on: [push] #evento que lo activara
+jobs: #Definicion de los jobs
+  hola-mundo: #nombre del job
+    runs-on: ubutu-latestv #Maquina en la que se ejecutara
+    steps: #Lista de steps del job hola-mundo
+      - name: clone repository
+        uses: actions/checkout@v4
+      - name: install node js 
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: saludo
+        run: echo hola mundo desde la consola
+      - name: ejecuto el scipt de node
+        run: npm i 
