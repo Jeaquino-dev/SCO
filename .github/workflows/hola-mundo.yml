@@ -13,4 +13,4 @@ jobs: #Definicion de los jobs
       - name: saludo
         run: echo hola mundo desde la consola
       - name: ejecuto el scipt de node
-        run: npm i 
+        run: node saludo.js {{github.actor}}
