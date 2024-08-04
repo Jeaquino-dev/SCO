@@ -1,0 +1,45 @@
+name: triggers #nombre del workflow
+run-name: Ejercicio 2 - triggers
+on: 
+  push: #evento que lo activara
+    branches: [actions,develop]
+    paths:
+      - './.github/scripts/**.js'
+  workflow_dispatch:
+    inputs:
+      alerta:
+        description: 'nivel'
+        required: true
+        default: medio
+        type: choice
+        options:
+          - medio
+          - bajo
+jobs: #Definicion de los jobs
+  saludo: #nombre del job
+    runs-on: ubuntu-latest #Maquina en la que se ejecutara
+    steps: #Lista de steps del job hola-mundo
+      - name: clone repository
+        uses: actions/checkout@v4
+      - name: install node js 
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: saludo
+        run: echo hola mundo desde la consola
+      - name: ejecuto el scipt de node
+        run: node ./.github/scripts/triggers.js ${{inputs.alerta}}
+  saludo-schedule: #nombre del job
+    if: ${{ github.event_name != 'push' }}
+    runs-on: ubuntu-latest #Maquina en la que se ejecutara
+    steps: #Lista de steps del job hola-mundo
+      - name: clone repository
+        uses: actions/checkout@v4
+      - name: install node js 
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: saludo
+        run: echo hola mundo desde la consola
+      - name: ejecuto el scipt de node
+        run: node ./.github/scripts/triggers.js ${{github.actor}}
