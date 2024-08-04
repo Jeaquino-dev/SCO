@@ -1,0 +1,26 @@
+name: expressions #nombre del workflow
+run-name: Ejercicio 3 - expressions
+on: 
+  workflow_dispatch:
+    inputs:
+      edad:
+        description: 'Edad'
+        required: true
+        type: string
+      nombre:
+        description: 'Nombre'
+        required: true
+        type: string
+jobs: #Definicion de los jobs
+  mayor: #nombre del job
+    if: ${{ inputs.edad >= 18 }}
+    runs-on: ubuntu-latest #Maquina en la que se ejecutara
+    steps: #Lista de steps del job hola-mundo
+      - name: ejecuto el scipt de node
+        run: echo ${{inputs.nombre}} eres mayor
+  menor: #nombre del job
+    if: ${{ inputs.edad < 18 }}
+    runs-on: ubuntu-latest #Maquina en la que se ejecutara
+    steps: #Lista de steps del job hola-mundo
+      - name: ejecuto el scipt de node
+        run: echo ${{inputs.nombre}} eres menor
