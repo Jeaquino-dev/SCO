@@ -1,20 +1,19 @@
 name: triggers #nombre del workflow
 run-name: Ejercicio 2 - triggers
-on: 
-  push: #evento que lo activara
-    branches: [actions,develop]
-    paths:
-      - './.github/scripts/**.js'
-  workflow_dispatch:
-    inputs:
-      alerta:
-        description: 'nivel'
-        required: true
-        default: medio
-        type: choice
-        options:
-          - medio
-          - bajo
+on: [push] #evento que lo activara
+  #   branches: [actions,develop]
+  #   paths:
+  #     - './.github/scripts/**.js'
+  # workflow_dispatch:
+  #   inputs:
+  #     alerta:
+  #       description: 'nivel'
+  #       required: true
+  #       default: medio
+  #       type: choice
+  #       options:
+  #         - medio
+  #         - bajo
 jobs: #Definicion de los jobs
   saludo: #nombre del job
     runs-on: ubuntu-latest #Maquina en la que se ejecutara
